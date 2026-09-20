@@ -233,16 +233,18 @@ function gather(){
 function submit(){
   var data=gather();
   var json=JSON.stringify(data,null,2);
-  var fsId='__FORMSPREE_ID__';
-  if(fsId.indexOf('__')!==0){
-    fetch('https://formspree.io/f/'+fsId,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:json})
+  /* 中转代理地址：复用 PythonAnywhere 上问卷一后台的 /api/lawyer-survey 路由（token 藏服务端）
+     网页源码本身不含任何 token */
+  var PROXY_URL='https://kesongxiaofang.pythonanywhere.com/api/lawyer-survey';
+  if(PROXY_URL.indexOf('__')!==0){
+    fetch(PROXY_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:json})
       .then(function(r){return r.ok?finish('提交成功，非常感谢！'):alert('提交失败，请重试');})
       .catch(function(){alert('网络错误，提交失败');});
   }else{
     if(navigator.clipboard)navigator.clipboard.writeText(json);
     var blob=new Blob([json],{type:'application/json'});
     var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='survey_'+Date.now()+'.json';a.click();
-    finish('已复制答案到剪贴板并下载 JSON 文件。\n（如需自动收集到邮箱，在网页代码中填入 Formspree ID 即可）');
+    finish('已复制答案到剪贴板并下载 JSON 文件。\n（如需自动收集到 GitHub Issues，请在网页代码中填入中转代理地址 PROXY_URL）');
   }
 }
 function finish(msg){
