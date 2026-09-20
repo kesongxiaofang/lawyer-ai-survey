@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>律师对法律AI工具的认知与需求调研问卷</title>
+<style>
+:root{--blue:#1f6feb;--purple:#8957e5;--green:#2da44e;--red:#cf222e;--orange:#bc4c00;}
+*{box-sizing:border-box;}
+body{font-family:'Microsoft YaHei','微软雅黑',-apple-system,Helvetica,Arial,sans-serif;
+  max-width:780px;margin:0 auto;padding:24px 16px 80px;color:#1f2328;line-height:1.7;background:#fbfbfd;}
+.title{text-align:center;font-size:24px;font-weight:700;margin:8px 0 4px;}
+.intro{background:#fff;border:1px solid #eaecef;border-radius:12px;padding:16px 18px;font-size:14px;color:#57606a;margin-bottom:20px;}
+.section{margin:28px 0 8px;font-size:19px;border-left:5px solid var(--blue);padding-left:10px;color:#1f2328;}
+.group-head{background:#f3f6fb;border:1px dashed #c9d6ea;border-radius:10px;padding:10px 14px;margin:14px 0 6px;}
+.group-head b{color:var(--blue);}
+.group-tip{display:block;font-size:12px;color:#57606a;margin-top:2px;}
+.q{border-bottom:1px solid #eee;padding:16px 0;}
+.qhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:8px;}
+.stem{font-weight:600;font-size:15px;}
+.badge{display:inline-block;font-size:12px;font-weight:600;color:#fff;padding:2px 9px;border-radius:20px;white-space:nowrap;}
+.badge-red{background:var(--red);} .badge-blue{background:var(--blue);}
+.badge-purple{background:var(--purple);} .badge-green{background:var(--green);}
+.badge-orange{background:var(--orange);}
+.note{font-size:12.5px;color:#57606a;font-style:italic;margin:4px 0 8px 2px;}
+.opt{display:block;padding:6px 10px;margin:4px 0;border:1px solid #eaecef;border-radius:8px;cursor:pointer;background:#fff;transition:.15s;}
+.opt:hover{background:#f0f6ff;border-color:#c9d6ea;}
+.opt input{margin-right:9px;vertical-align:middle;}
+textarea{width:100%;border:1px solid #d0d7de;border-radius:8px;padding:9px;font-family:inherit;font-size:14px;resize:vertical;}
+.q26note{margin-bottom:6px;} .q26row{display:flex;align-items:center;gap:10px;margin:6px 0;}
+.q26label{flex:1;font-size:13.5px;}
+.q26row input{width:130px;padding:5px 8px;border:1px solid #d0d7de;border-radius:6px;}
+.sub{border:1px solid #eaecef;border-radius:10px;padding:12px 14px;margin:8px 0;background:#fafbfc;}
+.sub-title{font-weight:600;margin-bottom:6px;font-size:14px;} .sub-sub{font-size:13px;color:#57606a;margin:8px 0 2px;}
+.contact{display:flex;align-items:center;gap:10px;margin:8px 0;}
+.contact span{width:130px;font-size:13.5px;color:#57606a;} .contact input{flex:1;padding:7px 10px;border:1px solid #d0d7de;border-radius:6px;}
+.submit-wrap{text-align:center;margin-top:30px;}
+.submit-btn{background:var(--blue);color:#fff;border:none;padding:13px 40px;font-size:16px;border-radius:26px;cursor:pointer;font-weight:600;}
+.submit-btn:hover{opacity:.92;}
+.foot{text-align:center;color:#8b949e;font-size:13px;margin-top:22px;}
+</style>
+</head>
+<body>
+<div class="title">律师对法律AI工具的认知与需求调研问卷</div>
+<div class="intro">您好！我是一名法学专业学生，正在开发一款真正能落到律师日常办案里的法律AI工具。在动手把产品做出来之前，我更想先听清一线律师的真实需求——您现在用什么工具、哪些环节最费时间、最希望AI帮您做什么。这份问卷不记名，结果只用于把产品做对、做准，大约需要12-18分钟。题目没有对错，按您的真实情况填就好，感谢您抽时间帮忙！</div>
+<h2 class="section">第一部分　基本情况</h2>
+<div class="q " id="q1"><div class="qhead"><span class="stem">您目前的身份是？（单选，本题决定后续部分题目的跳转）</span></div><div class="opt">执业律师（非合伙人 / 授薪律师）</div><div class="opt">实习律师 / 律师助理</div><div class="opt">合伙人 / 权益合伙人</div><div class="opt">企业法务 / 其他法律从业者</div><div class="opt">其他：________</div></div>
+<div class="group-head"><b>实习律师 / 律师助理 专属题</b><span class="group-tip">系统已根据您的身份自动显示，无需手动判断跳转</span></div>
+<div class="q group-assistant" id="q2"><div class="qhead"><span class="stem">【仅第1题选 B 的朋友回答】您对律师这个职业的打算？（单选；选A的请继续正常作答）</span><span class="badge badge-orange">条件题 · 仅助理</span></div><div class="note">提示：若选 C，后面的办案细节题对您参考意义不大，可直接跳到最后一题留下联系方式或建议即可；选 A/B 的请正常继续作答。</div><div class="note">专属题</div><div class="note">以下三组分别对应 实习律师/律师助理、合伙人、执业律师（非合伙人）。</div><div class="opt">打算长期做执业律师，希望不断提升自己</div><div class="opt">还没想好，先做着看</div><div class="opt">只是过渡，不打算做律师</div></div>
+<div class="q group-assistant" id="q3"><div class="qhead"><span class="stem">【实习律师 / 律师助理 专属】您日常工作中，占用时间最多的几类事务是？（最多选3项）</span><span class="badge badge-blue">实习律师 / 助理专属</span></div><div class="opt">文书起草与校对（起诉状、合同、法律意见等）</div><div class="opt">证据整理、编清单、截图</div><div class="opt">法律法规 / 类案检索</div><div class="opt">立案、递交等程序性跑腿</div><div class="opt">客户沟通与接待</div><div class="opt">会议纪要、案卷归档等事务性工作</div><div class="opt">其他：________</div></div>
+<div class="q group-assistant" id="q4"><div class="qhead"><span class="stem">【实习律师 / 律师助理 专属】除了帮您干活，您是否希望AI也能帮您“学专业”——比如学着像资深律师一样拆解案件、解释办案思路、给出可参考的范本？（单选）</span><span class="badge badge-blue">实习律师 / 助理专属</span></div><div class="opt">非常希望，这正是我目前欠缺的</div><div class="opt">希望，但更看重它先把活干好</div><div class="opt">无所谓</div><div class="opt">不需要，我自己学就好</div></div>
+<div class="group-head"><b>合伙人 / 权益合伙人 专属题</b><span class="group-tip">系统已根据您的身份自动显示，无需手动判断跳转</span></div>
+<div class="q group-partner" id="q5"><div class="qhead"><span class="stem">【合伙人 / 权益合伙人 专属】您当前最花精力的“非直接办案”事务是？（最多选3项）</span><span class="badge badge-purple">合伙人专属</span></div><div class="opt">案源拓展 / 客户获取</div><div class="opt">现有客户关系维护</div><div class="opt">团队管理与人手安排</div><div class="opt">财务、成本与利润核算</div><div class="opt">合规与执业风险管控</div><div class="opt">个人 / 律所品牌与专业形象</div><div class="opt">其他：________</div></div>
+<div class="q group-partner" id="q6"><div class="qhead"><span class="stem">【合伙人 / 权益合伙人 专属】在团队管理上，您最希望AI帮上什么？（最多选3项）</span><span class="badge badge-purple">合伙人专属</span></div><div class="opt">统一团队文书的质量与风格（减少新人写歪）</div><div class="opt">新人培训 / 带教（给模板、陪练）</div><div class="opt">案件进度与关键期限监控（避免遗漏）</div><div class="opt">成本与利润核算（看清每个案子赚不赚钱）</div><div class="opt">自动生成客户进展报告</div><div class="opt">其他：________</div></div>
+<div class="q group-partner" id="q7"><div class="qhead"><span class="stem">【合伙人 / 权益合伙人 专属】关于“获客 / 案源”，您是否希望借助AI辅助？（单选）</span><span class="badge badge-purple">合伙人专属</span></div><div class="opt">希望，比如帮做专业内容、做客户画像</div><div class="opt">可以试试，但核心还是靠人脉和口碑</div><div class="opt">不希望，案源不适合交给AI</div><div class="opt">说不清</div></div>
+<div class="group-head"><b>执业律师（非合伙人）专属题</b><span class="group-tip">系统已根据您的身份自动显示，无需手动判断跳转</span></div>
+<div class="q group-lawyer" id="q8"><div class="qhead"><span class="stem">【执业律师 专属】您日常办案中，最希望减少的“重复、低价值但耗时间”的工作是？（最多选3项）</span><span class="badge badge-green">执业律师专属</span></div><div class="opt">证据整理与编清单</div><div class="opt">各类文书初稿起草</div><div class="opt">法规 / 类案检索与核对</div><div class="opt">与客户反复沟通的文案</div><div class="opt">程序性事务（立案、递交、期限盯对）</div><div class="opt">案卷归档等事务</div><div class="opt">其他：________</div></div>
+<div class="q group-lawyer" id="q9"><div class="qhead"><span class="stem">【执业律师 专属】您承办案件时，独立作业与和合伙人协作承办的大致比例是？（单选）</span><span class="badge badge-purple">合伙人专属</span></div><div class="opt">几乎都独立作业</div><div class="opt">独立作业为主，与合伙人协作次之</div><div class="opt">独立作业与协作承办各约一半</div><div class="opt">以与合伙人协作为主，独立作业为辅</div><div class="opt">几乎都和合伙人协作承办</div></div>
+<div class="q group-lawyer" id="q10"><div class="qhead"><span class="stem">【执业律师 专属】在“向客户汇报进展、起草沟通文案”方面，您是否希望AI辅助？（单选）</span><span class="badge badge-green">执业律师专属</span></div><div class="opt">很希望，这类活最耗神</div><div class="opt">希望，但内容要我把关</div><div class="opt">无所谓</div><div class="opt">不希望，客户沟通得自己来</div></div>
+<h2 class="section">第二部分　对 AI 工具的了解和使用</h2>
+<div class="q " id="q11"><div class="qhead"><span class="stem">您的执业年限（或从事法律工作的年限）是？（单选）</span></div><div class="opt">3年以下</div><div class="opt">3-5年</div><div class="opt">5-10年</div><div class="opt">10年以上</div></div>
+<div class="q " id="q12"><div class="qhead"><span class="stem">您目前的主要业务领域是？（可多选，请尽量勾全您涉及的方向）</span></div><div class="opt">婚姻家事 / 继承</div><div class="opt">劳动争议 / 劳动仲裁</div><div class="opt">交通事故 / 人身损害赔偿</div><div class="opt">破产清算 / 重整 / 债务重组</div><div class="opt">公司法 / 公司治理（含股东纠纷）</div><div class="opt">合同纠纷（买卖、借款、租赁等一般民商事）</div><div class="opt">公司并购（M&amp;A）/ 股权投资</div><div class="opt">证券 / 资本市场（IPO、发债、合规）</div><div class="opt">建设工程 / 房地产</div><div class="opt">金融 / 银行 / 信托 / 保险</div><div class="opt">知识产权（专利、商标、著作权、商业秘密）</div><div class="opt">刑事辩护 / 刑事合规</div><div class="opt">行政纠纷（行政处罚、行政许可、税务争议）</div><div class="opt">税务（涉税争议、税务筹划）</div><div class="opt">涉外 / 国际商事（跨境争议、外商投资）</div><div class="opt">海商海事</div><div class="opt">招投标 / 政府采购</div><div class="opt">执行 / 不良资产处置</div><div class="opt">企业合规 / 数据合规 / 个人信息保护</div><div class="opt">医疗纠纷</div><div class="opt">反垄断与反不正当竞争</div><div class="opt">消费者权益 / 产品责任</div><div class="opt">环境与资源</div><div class="opt">民间借贷 / 债权债务</div><div class="opt">其他：________</div></div>
+<div class="q " id="q13"><div class="qhead"><span class="stem">您所在团队（或律所）的人员构成更接近哪种？（单选）</span></div><div class="opt">独立执业，基本没有助理</div><div class="opt">小团队：1名合伙人/主办律师 + 1-2名律师或助理（1+1 / 1+2）</div><div class="opt">小团队：1名合伙人/主办律师 + 2-3名律师 + 3-4名助理（1+2+3 / 1+2+4 类）</div><div class="opt">6人以上的中型团队</div><div class="opt">20人以上的大所/大团队</div></div>
+<div class="q " id="q14"><div class="qhead"><span class="stem">您的案源中，诉讼业务和非诉业务的比例大概是？（单选）</span></div><div class="note">第二部分 对AI工具的了解和使用</div><div class="opt">几乎全是诉讼</div><div class="opt">诉讼为主，少量非诉</div><div class="opt">非诉为主，少量诉讼</div><div class="opt">几乎全是非诉</div></div>
+<div class="q " id="q15"><div class="qhead"><span class="stem">您在日常工作中使用AI工具的情况是？（单选）</span></div><div class="opt">几乎每天都在用</div><div class="opt">经常用（每周几次）</div><div class="opt">偶尔用（每月几次）</div><div class="opt">注册过，但基本没用</div><div class="opt">从没用过</div></div>
+<div class="q " id="q16"><div class="qhead"><span class="stem">您用过或听说过的AI工具有哪些？（可多选）</span></div><div class="opt">通用对话AI（如DeepSeek、豆包、ChatGPT、通义千问、文心一言等）</div><div class="opt">通用AI的深度搜索/联网功能</div><div class="opt">专业法律AI产品（如得理、法行宝、秘塔法律、Alpha、法智等）</div><div class="opt">AI办公工具（如WPS AI、钉钉AI等）</div><div class="opt">别人定制的AI助手 / 知识库问答工具</div><div class="opt">AI技能包 / Skill（下载后装进通用AI里，让它在某个业务上变专业，如合同审查技能包）</div><div class="opt">都没用过也没听说过</div></div>
+<div class="q " id="q17"><div class="qhead"><span class="stem">您用AI工具主要做过哪些事？（可多选；没用过的可跳过）</span></div><div class="opt">法律法规检索（具体条文的查找与核对）</div><div class="opt">类案检索（找相似案例、整理裁判观点）</div><div class="opt">起草诉讼文书（起诉状、答辩状、代理词、上诉状、法律意见书）</div><div class="opt">起草非诉文书（合同、律师函、备忘录、交易文件）</div><div class="opt">修改 / 润色 / 校对文书</div><div class="opt">合同审查（标风险点、提修改建议、比对版本）</div><div class="opt">证据整理（归类、编号、制作证据清单）</div><div class="opt">从聊天记录 / 截图 / 录音中提取事实与要点</div><div class="opt">案情分析、诉讼策略与攻防思路讨论</div><div class="opt">法律专题研究（就某个具体问题做检索研究报告）</div><div class="opt">计算类工作（违约金、赔偿、利息、仲裁请求、诉讼时效）</div><div class="opt">程序性问题解答（期限、管辖、材料清单、立案流程）</div><div class="opt">客户沟通（接待话术、答疑、进展告知文案）</div><div class="opt">会议纪要、谈话 / 庭审录音整理</div><div class="opt">尽调报告、办案报告、结案报告的起草或续写</div><div class="opt">翻译（中英等法律文件互译）</div><div class="opt">知识管理（把所内资料整理成可检索的知识库）</div><div class="opt">日常办公（格式调整、PPT、表格、摘要）</div><div class="opt">其他：________</div></div>
+<div class="q " id="q18"><div class="qhead"><span class="stem">总体来说，您觉得现在这些AI工具好用吗？（单选）</span></div><div class="opt">挺好用，已经离不开</div><div class="opt">有些环节好用，但毛病不少</div><div class="opt">噱头大于实用</div><div class="opt">基本没用，不如自己来</div><div class="opt">没用过，不好评价</div></div>
+<div class="q " id="q19"><div class="qhead"><span class="stem">【追问第18题】请结合您在第18题的选择，说明原因：（填空）</span></div><textarea name="q19" rows="3" placeholder="请在此填写"></textarea></div>
+<div class="q " id="q20"><div class="qhead"><span class="stem">您主要通过什么渠道了解法律AI产品？（可多选）</span></div><div class="opt">同行朋友推荐</div><div class="opt">律所统一采购/组织培训</div><div class="opt">微信公众号、短视频</div><div class="opt">行业会议、讲座</div><div class="opt">自己主动搜索研究</div><div class="opt">基本没有了解渠道</div></div>
+<div class="q " id="q21"><div class="qhead"><span class="stem">【分流题】抛开现在工具有没有好用，您对“进一步了解或使用AI工具帮自己办案”的态度是？（单选，本题决定是否继续作答）</span><span class="badge badge-red">分流题</span></div><div class="note">提示：若选 C，为不占用您时间，请直接跳到最后一题留个联系方式或给些建议即可，感谢！</div><div class="note">第三部分 办案中的真实需求</div><div class="opt">有兴趣，愿意继续聊聊需求</div><div class="opt">说不上兴趣，但如果有现成好用的，我愿意试</div><div class="opt">基本没兴趣，短期内不会用</div></div>
+<h2 class="section">第三部分　办案中的真实需求</h2>
+<div class="q " id="q22"><div class="qhead"><span class="stem">以下办案环节，哪些占用了您（或您团队）最多时间？（最多选3项）</span></div><div class="opt">证据材料整理（翻材料、截图、编证据清单）</div><div class="opt">各类文书起草（报告、起诉状、答辩状、申请书等）</div><div class="opt">法律法规和类案检索</div><div class="opt">当事人沟通与接待</div><div class="opt">调查取证（调流水、查档案、跑手续）</div><div class="opt">账册/财务材料核对</div><div class="opt">立案、递交等程序性跑腿事务</div></div>
+<div class="q " id="q23"><div class="qhead"><span class="stem">具体到下面这些场景，如果AI能做到“基本能用、您把关确认”，哪些您愿意交给它做？（可多选，领域已尽量覆盖全）</span></div><div class="opt">从聊天记录、截图中自动识别并生成证据清单</div><div class="opt">按固定格式起草或续写办案报告（破产/重整报告、尽调报告、结案报告）</div><div class="opt">起诉状、答辩状、代理词等标准诉讼文书的初稿</div><div class="opt">银行流水 / 账务的初步筛查（标出可疑大额、异常转移、财产线索）</div><div class="opt">类案检索并整理裁判观点摘要</div><div class="opt">劳动仲裁请求的计算（工资、赔偿金、加班费、工伤待遇）</div><div class="opt">交通事故 / 人损赔偿的自动计算与索赔清单生成</div><div class="opt">合同审查：标出风险条款、给出修改建议</div><div class="opt">公司并购/投融资：交易文件（SPA、SHA、尽调清单）的起草与审阅辅助</div><div class="opt">证券/资本市场：招股书、反馈回复、合规报告的素材整理与初稿</div><div class="opt">建设工程：工程量、签证、工期争议的材料梳理与金额计算</div><div class="opt">知识产权：侵权比对、权利要求解读、检索报告初稿</div><div class="opt">税务/行政争议：法条适用分析、处罚裁量论证辅助</div><div class="opt">涉外/国际商事：涉外合同条款审查、域外法查明摘要</div><div class="opt">一站式流程：从合同/材料出发，先识别适用的赔偿金、利息等计算公式并完成计算，再同步整理出证据清单（劳动仲裁、民间借贷等）</div><div class="opt">庭审提纲、质证意见、辩论意见的初稿</div><div class="opt">程序性问题解答（期限、管辖、材料清单、流程）</div><div class="opt">都不愿意交给AI</div></div>
+<div class="q " id="q24"><div class="qhead"><span class="stem">第23题中您“愿意”交给AI的项目，目前主要由谁来做？（单选）</span></div><div class="opt">基本是我自己</div><div class="opt">主要靠助理/实习律师</div><div class="opt">团队分工做</div><div class="opt">部分外包给第三方</div><div class="opt">第23题选了“都不愿意”</div></div>
+<div class="q " id="q25"><div class="qhead"><span class="stem">第23题中您“不愿意”交给AI的项目，目前主要由谁来做？（对照上面选；若第23题全愿意可跳过）</span></div><div class="note">【追问】您认为这些“不愿意交给AI”的任务，主要顾虑是什么？（可多选）</div><div class="opt">基本是我自己</div><div class="opt">主要靠助理/实习律师</div><div class="opt">团队分工做</div><div class="opt">部分外包给第三方</div><div class="opt">第23题全部都愿意，没有不愿意的项目</div><div class="opt">准确性要求太高，AI出错代价大</div><div class="opt">涉及敏感判断 / 专业经验，AI替代不了</div><div class="opt">责任风险，出错算不清是谁的锅</div><div class="opt">案件信息保密，不能交给外部AI</div><div class="opt">流程难以标准化，AI学不会</div><div class="opt">其他：________</div></div>
+<div class="q " id="q26"><div class="qhead"><span class="stem">请根据第23题您勾选的项目，逐项填写：处理“一个案子”平均大约需要几小时？</span></div><div class="note">就在您在第23题勾选的项后面填数字即可（没勾的可留空）。只填数字，单位默认“小时／案子”。</div><div class="q26note note">根据第23题您勾选的项目，逐项填写处理“一个案子”平均需要几小时（单位：小时/案子）：</div><div class="q26row" data-q23="A"><span class="q26label">从聊天记录、截图中自动识别并生成证据清单</span><input type="number" name="q26_A" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="B"><span class="q26label">按固定格式起草或续写办案报告（破产/重整报告、尽调报告、结案报告）</span><input type="number" name="q26_B" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="C"><span class="q26label">起诉状、答辩状、代理词等标准诉讼文书的初稿</span><input type="number" name="q26_C" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="D"><span class="q26label">银行流水 / 账务的初步筛查（标出可疑大额、异常转移、财产线索）</span><input type="number" name="q26_D" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="E"><span class="q26label">类案检索并整理裁判观点摘要</span><input type="number" name="q26_E" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="F"><span class="q26label">劳动仲裁请求的计算（工资、赔偿金、加班费、工伤待遇）</span><input type="number" name="q26_F" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="G"><span class="q26label">交通事故 / 人损赔偿的自动计算与索赔清单生成</span><input type="number" name="q26_G" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="H"><span class="q26label">合同审查：标出风险条款、给出修改建议</span><input type="number" name="q26_H" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="I"><span class="q26label">公司并购/投融资：交易文件（SPA、SHA、尽调清单）的起草与审阅辅助</span><input type="number" name="q26_I" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="J"><span class="q26label">证券/资本市场：招股书、反馈回复、合规报告的素材整理与初稿</span><input type="number" name="q26_J" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="K"><span class="q26label">建设工程：工程量、签证、工期争议的材料梳理与金额计算</span><input type="number" name="q26_K" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="L"><span class="q26label">知识产权：侵权比对、权利要求解读、检索报告初稿</span><input type="number" name="q26_L" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="M"><span class="q26label">税务/行政争议：法条适用分析、处罚裁量论证辅助</span><input type="number" name="q26_M" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="N"><span class="q26label">涉外/国际商事：涉外合同条款审查、域外法查明摘要</span><input type="number" name="q26_N" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="O"><span class="q26label">一站式流程：从合同/材料出发，先识别适用的赔偿金、利息等计算公式并完成计算，再同步整理出证据清单（劳动仲裁、民间借贷等）</span><input type="number" name="q26_O" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="P"><span class="q26label">庭审提纲、质证意见、辩论意见的初稿</span><input type="number" name="q26_P" min="0" step="0.5" placeholder="小时/案子"></div><div class="q26row" data-q23="Q"><span class="q26label">程序性问题解答（期限、管辖、材料清单、流程）</span><input type="number" name="q26_Q" min="0" step="0.5" placeholder="小时/案子"></div></div>
+<div class="q " id="q27"><div class="qhead"><span class="stem">针对您的具体业务，下面哪些“AI能帮上忙”的描述最贴近您的需求？（最多选3项，已按领域细化）</span></div><div class="opt">破产/重整：按既有报告格式快速续写新案报告、整理债权申报材料</div><div class="opt">婚姻家事：从海量银行流水中识别异常支出、财产转移线索</div><div class="opt">劳动仲裁：一键生成请求计算表与申请文书</div><div class="opt">交通事故/人损：自动计算赔偿项目、生成索赔清单</div><div class="opt">合同业务：快速审查、标出风险点与谈判要点</div><div class="opt">公司并购/投融资：辅助起草与审阅SPA/SHA、生成尽调问题清单</div><div class="opt">证券/资本市场：辅助整理反馈回复素材、合规自查清单</div><div class="opt">建设工程：梳理签证工期材料、辅助计算争议金额</div><div class="opt">知识产权：侵权比对、检索报告初稿</div><div class="opt">税务/行政争议：法条适用与裁量论证辅助</div><div class="opt">涉外：域外法查明摘要、涉外合同审查</div><div class="opt">刑事：类案量刑检索、会见提纲</div><div class="opt">民间借贷：本金、利息、违约金计算与证据清单整理</div><div class="opt">通用：把散乱材料自动整理成规范文档、统一格式</div><div class="opt">通用：多轮对话式案情分析、随时问答</div><div class="opt">其他：________</div></div>
+<div class="q " id="q28"><div class="qhead"><span class="stem">您平时同时接到多个任务时（比如上午给的合同下午要出意见、上诉状要在上诉期内交完、刑案期限、短期要提交的报告），通常怎么记录和安排？（可多选）</span></div><div class="opt">记在电脑/手机待办清单或记事本里</div><div class="opt">记在手写的本子上</div><div class="opt">靠脑子记</div><div class="opt">交给助理或团队其他人盯着</div><div class="opt">用微信/钉钉的聊天记录当提醒</div><div class="opt">其他：________</div></div>
+<div class="q " id="q29"><div class="qhead"><span class="stem">您有没有因为任务太多、太急，忘记过某个期限或漏掉过某件事？（单选）</span></div><div class="opt">经常有，忙起来顾不上看记录</div><div class="opt">偶尔有</div><div class="opt">很少</div><div class="opt">从来没有</div></div>
+<div class="q " id="q30"><div class="qhead"><span class="stem">如果AI能这样帮您管任务和期限：您把任务随手记给它（打字、语音，甚至转发微信/钉钉消息），它自动识别事项和截止时间（如上诉期、举证期限），再像手机通知一样，提前1天、3天或5个工作日主动提醒您——您觉得怎么样？（单选）</span></div><div class="opt">很需要，这正是我的痛点</div><div class="opt">有用，但担心它识别不准期限</div><div class="opt">无所谓，现有待办工具够用</div><div class="opt">不需要</div></div>
+<div class="q " id="q31"><div class="qhead"><span class="stem">用AI审合同（或其他文书）时，您更希望它怎么配合您？（单选）</span></div><div class="note">第四部分 对定制化AI工具的态度</div><div class="opt">能记住我的审查习惯和风格（我改过它的建议后，下次就按我的来），越用越顺手</div><div class="opt">每次都按通用的全面标准来，我自己再筛</div><div class="opt">只要能按我每次给的具体要求来就行</div><div class="opt">说不清</div></div>
+<h2 class="section">第四部分　对定制化 AI 工具的态度</h2>
+<div class="q " id="q32"><div class="qhead"><span class="stem">如果有人针对您的业务方向，定制一个专属AI助手（比如懂破产报告怎么写、会按法院认可的风格生成材料），您的态度是？（单选）</span></div><div class="opt">很感兴趣，愿意尽快试用</div><div class="opt">有兴趣，但想先看别人用得怎么样</div><div class="opt">观望，除非确实证明可靠</div><div class="opt">不感兴趣，AI帮不上我的业务</div></div>
+<div class="q " id="q33"><div class="qhead"><span class="stem">您对把AI用在办案上，最大的顾虑是什么？（最多选3项）</span></div><div class="opt">AI会编造法条、案例（幻觉问题），核实太费劲</div><div class="opt">案件信息、当事人隐私可能泄露</div><div class="opt">出了错算谁的？责任归属不清</div><div class="opt">不够懂法律专业，输出质量差</div><div class="opt">不懂我的需求，答非所问，得反复纠正</div><div class="opt">价格贵，不值得</div><div class="opt">不会用，学习成本高</div><div class="opt">没什么顾虑，好用就行</div></div>
+<div class="q " id="q34"><div class="qhead"><span class="stem">关于数据保密，您能接受的方式是？（单选）</span></div><div class="opt">必须本地部署，案件数据不能出我的电脑</div><div class="opt">可以用云服务，但数据不能被存储和拿去训练</div><div class="opt">只要好用，无所谓</div><div class="opt">说不清，看具体情况</div><div class="opt">其他（请注明：________）</div></div>
+<div class="q " id="q35"><div class="qhead"><span class="stem">如果定制AI工具按下面的方式收费，您更能接受哪种？（单选，本题决定下一题）</span><span class="badge badge-blue">分支题</span></div><div class="opt">一次性买断，永久使用</div><div class="opt">按月/按年订阅</div><div class="opt">按案件或按次付费</div><div class="opt">先免费试用，好用再谈</div><div class="opt">不愿意为此付费</div><div class="opt">其他（请注明：________）</div></div>
+<div class="q" id="q36"><div class="qhead"><span class="stem">36. 根据您在第35题的选择，请回答对应的价格问题：</span><span class="badge badge-blue">分支结果 · 随第35题</span></div>
+    <div class="sub" id="q36_A">
+      <div class="sub-title">若第35题选 A（一次性买断）：您认为合理的买断价格区间是？</div>
+      <label class="opt"><input type="radio" name="q36A" value="1">50元以内</label>
+      <label class="opt"><input type="radio" name="q36A" value="2">50-150元</label>
+      <label class="opt"><input type="radio" name="q36A" value="3">150-400元</label>
+      <label class="opt"><input type="radio" name="q36A" value="4">400-1000元</label>
+      <label class="opt"><input type="radio" name="q36A" value="5">1000-2000元</label>
+      <label class="opt"><input type="radio" name="q36A" value="6">2000元以上</label>
+    </div>
+    <div class="sub" id="q36_B">
+      <div class="sub-title">若第35题选 B（按月/按年订阅）：您能接受——</div>
+      <div class="sub-sub">月费</div>
+      <label class="opt"><input type="radio" name="q36B_month" value="1">10元以内</label>
+      <label class="opt"><input type="radio" name="q36B_month" value="2">10-30元</label>
+      <label class="opt"><input type="radio" name="q36B_month" value="3">30-80元</label>
+      <label class="opt"><input type="radio" name="q36B_month" value="4">80-150元</label>
+      <label class="opt"><input type="radio" name="q36B_month" value="5">150-300元</label>
+      <label class="opt"><input type="radio" name="q36B_month" value="6">300元以上</label>
+      <div class="sub-sub">或年费</div>
+      <label class="opt"><input type="radio" name="q36B_year" value="1">100元以内</label>
+      <label class="opt"><input type="radio" name="q36B_year" value="2">100-500元</label>
+      <label class="opt"><input type="radio" name="q36B_year" value="3">500-1500元</label>
+      <label class="opt"><input type="radio" name="q36B_year" value="4">1500-3000元</label>
+      <label class="opt"><input type="radio" name="q36B_year" value="5">3000元以上</label>
+    </div>
+    <div class="sub" id="q36_C">
+      <div class="sub-title">若第35题选 C（按件/按次）：您能接受的单次/单案费用是？</div>
+      <label class="opt"><input type="radio" name="q36C" value="1">2元以内</label>
+      <label class="opt"><input type="radio" name="q36C" value="2">2-8元</label>
+      <label class="opt"><input type="radio" name="q36C" value="3">8-20元</label>
+      <label class="opt"><input type="radio" name="q36C" value="4">20-50元</label>
+      <label class="opt"><input type="radio" name="q36C" value="5">50-100元</label>
+      <label class="opt"><input type="radio" name="q36C" value="6">100元以上</label>
+    </div>
+    <div class="sub" id="q36_skip">
+      <div class="sub-title">若第35题选 D（先免费试用）/ E（不愿付费）/ F（其他）：本题可跳过。</div>
+    </div></div>
+<div class="q " id="q37"><div class="qhead"><span class="stem">您希望这类工具以什么形式提供？（可多选）</span></div><div class="opt">独立网站，打开浏览器就能用</div><div class="opt">微信里就能用（小程序/公众号）</div><div class="opt">嵌入我常用的办公软件（Word、WPS等）</div><div class="opt">装在我自己电脑上的本地工具</div><div class="opt">无所谓，好用就行</div><div class="opt">其他（请注明：________）</div></div>
+<div class="q " id="q38"><div class="qhead"><span class="stem">您更希望以哪种“形态”获得这个工具？（单选）</span></div><div class="opt">一个完整、开箱即用的AI产品（打开就能用，不用管底层技术）</div><div class="opt">一个“技能包/Skill”：下载后装进我正在用的AI（如豆包、deepseek等）里，让那个AI在我这个业务上变专业</div><div class="opt">我自己希望的形式（请注明：________）</div></div>
+<div class="q " id="q39"><div class="qhead"><span class="stem">如果选技能包形式，通常需要您完成简单的安装设置（下载、导入、绑定到常用AI，一般几分钟），您更希望怎么完成这一步？（单选）</span></div><div class="note">第五部分 开放题（选填）</div><div class="opt">我自己就能搞定，给我个说明就行</div><div class="opt">希望有一步步的视频/图文教程跟着做</div><div class="opt">希望有人远程帮我装好、直接到手就能用</div><div class="opt">太麻烦的话我就不要了，最好开箱即用</div></div>
+<h2 class="section">第五部分　开放题（选填）</h2>
+<div class="q " id="q40"><div class="qhead"><span class="stem">在您的日常办案中，最希望AI帮您自动解决的三件事是什么？</span></div><textarea name="q40" rows="3" placeholder="请在此填写"></textarea></div>
+<div class="q " id="q41"><div class="qhead"><span class="stem">您有没有被AI“坑”过的经历（比如编造法条、答非所问、审合同答不到点上）？简单说说当时的情况。</span></div><textarea name="q41" rows="3" placeholder="请在此填写"></textarea></div>
+<div class="q " id="q42"><div class="qhead"><span class="stem">关于法律AI工具，您还有什么想法或建议？</span></div><div class="note">后续联系（选填）</div><textarea name="q42" rows="3" placeholder="请在此填写"></textarea></div>
+<h2 class="section">后续联系（选填）</h2>
+
+    <div class="q" id="q43">
+      <div class="qhead"><span class="stem">43. 如果您希望直接为您定制符合业务的法律AI工具，或对产品感兴趣，欢迎留下联系方式，作者会与您联系：</span></div>
+      <div class="contact"><span>微信号</span><input type="text" name="contact_wechat" placeholder="选填"></div>
+      <div class="contact"><span>手机号</span><input type="text" name="contact_phone" placeholder="选填"></div>
+      <div class="contact"><span>希望联系您的方式</span><input type="text" name="contact_how" placeholder="选填"></div>
+    </div>
+<div class="submit-wrap"><button class="submit-btn" onclick="submit()">提交问卷</button></div>
+<div class="foot">问卷到此结束，非常感谢您的耐心填写！您留下的每一个答案，都会直接影响我们接下来做什么、怎么做。</div>
+<script>
+function val(name){var e=document.querySelector('input[name="'+name+'"]:checked');return e?e.value:null;}
+function show(el,on){if(el)el.style.display=on?'':'none';}
+function refresh(){
+  var id1=val('q1');
+  var map={'A':'group-lawyer','B':'group-assistant','C':'group-partner'};
+  var active=map[id1];
+  ['group-assistant','group-partner','group-lawyer'].forEach(function(g){
+    document.querySelectorAll('.'+g).forEach(function(el){show(el, active && el.classList.contains(g));});
+  });
+  var jump=false;
+  if(id1==='B' && val('q2')==='C') jump=true;
+  if(val('q21')==='C') jump=true;
+  if(jump){
+    for(var n=2;n<=42;n++){show(document.getElementById('q'+n),false);}
+    show(document.getElementById('q43'),true);
+    var e43=document.getElementById('q43');
+    if(e43) setTimeout(function(){e43.scrollIntoView({behavior:'smooth'});},60);
+    return;
+  }
+  var id35=val('q35');
+  ['A','B','C','skip'].forEach(function(k){show(document.getElementById('q36_'+k), id35===k);});
+  document.querySelectorAll('.q26row').forEach(function(row){
+    var L=row.dataset.q23;
+    var cb=document.querySelector('input[name="q23"][value="'+L+'"]');
+    show(row, cb && cb.checked);
+  });
+}
+function gather(){
+  var out={};
+  for(var n=1;n<=43;n++){
+    var q=document.getElementById('q'+n);
+    if(!q || q.style.display==='none'){out['q'+n]='[已跳过/未显示]';continue;}
+    var ans=[];
+    q.querySelectorAll('input[type=radio]:checked,input[type=checkbox]:checked').forEach(function(e){
+      var sub=e.closest('.sub'); if(sub && sub.style.display==='none') return;
+      var row=e.closest('.q26row'); if(row && row.style.display==='none') return;
+      ans.push(e.value);
+    });
+    q.querySelectorAll('textarea').forEach(function(e){if(e.value.trim())ans.push(e.value.trim());});
+    q.querySelectorAll('input[type=text],input[type=number]').forEach(function(e){
+      var row=e.closest('.q26row'); if(row && row.style.display==='none') return;
+      var sub=e.closest('.sub'); if(sub && sub.style.display==='none') return;
+      if(e.value!=='') ans.push(e.value);
+    });
+    out['q'+n]=ans.length?ans:'';
+  }
+  return out;
+}
+function submit(){
+  var data=gather();
+  var json=JSON.stringify(data,null,2);
+  var fsId='__FORMSPREE_ID__';
+  if(fsId.indexOf('__')!==0){
+    fetch('https://formspree.io/f/'+fsId,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:json})
+      .then(function(r){return r.ok?alert('提交成功，非常感谢！'):alert('提交失败，请重试');})
+      .catch(function(){alert('网络错误，提交失败');});
+  }else{
+    if(navigator.clipboard) navigator.clipboard.writeText(json);
+    var blob=new Blob([json],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+    a.download='survey_'+Date.now()+'.json'; a.click();
+    alert('已复制答案到剪贴板并下载 JSON 文件。\n（如需自动收集到邮箱，在网页代码中填入 Formspree ID 即可）');
+  }
+}
+document.addEventListener('change',refresh);
+window.addEventListener('load',refresh);
+</script>
+</body>
+</html>
