@@ -16,6 +16,14 @@ from collections import Counter, defaultdict
 from flask import Blueprint, request, jsonify, Response
 
 survey_bp = Blueprint('survey', __name__)
+
+@survey_bp.after_request
+def _add_cors_headers(resp):
+    # 允许跨域（GitHub Pages 前端 -> PythonAnywhere 后端）
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    resp.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+    resp.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    return resp
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, 'survey_data.db')
 
@@ -561,8 +569,10 @@ def _init_db():
     conn.close()
 _init_db()
 
-@survey_bp.route('/api/lawyer-survey', methods=['POST'])
+@survey_bp.route('/api/lawyer-survey', methods=['POST', 'OPTIONS'])
 def receive_lawyer_survey():
+    if request.method == 'OPTIONS':
+        return ('', 204)
     try:
         data = request.get_json(force=True, silent=True)
         if not data:
