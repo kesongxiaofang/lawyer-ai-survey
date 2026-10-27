@@ -39,6 +39,11 @@ textarea{width:100%;border:1px solid #d0d7de;border-radius:8px;padding:9px;font-
 #nav #prevBtn{background:#eef1f4;color:#57606a;}
 #prog{font-size:13px;color:#57606a;flex:1;text-align:center;}
 #done{display:none;text-align:center;padding:40px 16px;font-size:17px;color:var(--green);font-weight:600;white-space:pre-line;}
+#submitTip{display:none;text-align:center;font-size:14px;padding:10px 14px;margin:10px 0;border-radius:8px;line-height:1.6;}
+#submitTip.busy{background:#eef1f4;color:#57606a;}
+#submitTip.ok{background:#eaf6ec;color:var(--green);}
+#submitTip.fail{background:#fdecea;color:var(--red);}
+#wxTip{display:none;text-align:center;font-size:13px;color:#cf222e;margin:6px 0 2px;}
 </style>
 </head>
 <body>
@@ -122,6 +127,8 @@ textarea{width:100%;border:1px solid #d0d7de;border-radius:8px;padding:9px;font-
     </div>
 </div>
 <div id="done"></div>
+<div id="submitTip"></div>
+<div id="wxTip">若本页打开缓慢或白屏，请点右上角“···”选择「在浏览器打开」（微信内置浏览器对境外站点兼容性较差）</div>
 <div class="q page" id="endpage"><div style="text-align:center;padding:26px 12px;"><div style="font-size:21px;font-weight:700;color:var(--green);margin-bottom:14px;">问卷到此结束</div><div style="font-size:14px;color:#57606a;line-height:1.95;">非常感谢您的耐心填写！您留下的每一个答案，都会直接影响我们接下来做什么、怎么做。<br>如果您愿意在上一题留下联系方式，我们会把阶段性的调研成果与产品进展分享给您。</div></div></div>
 <div id="nav"><button id="prevBtn" onclick="goPrev()">上一题</button><span id="prog"></span><button id="nextBtn" onclick="goNext()">下一题</button></div>
 <script>
@@ -230,10 +237,17 @@ function gather(){
 function submit(){
   var data=gather();
   var json=JSON.stringify(data);
-  try{
-    fetch('https://kesongxiaofang.pythonanywhere.com/api/lawyer-survey',{method:'POST',headers:{'Content-Type':'application/json'},body:json}).catch(function(){});
-  }catch(e){}
-  currentNum=999;render();window.scrollTo(0,0);
+  var tip=document.getElementById('submitTip');
+  tip.className='busy';tip.style.display='block';tip.textContent='正在提交，请稍候…';
+  fetch('https://kesongxiaofang.pythonanywhere.com/api/lawyer-survey',{method:'POST',headers:{'Content-Type':'application/json'},body:json})
+    .then(function(res){
+      if(res.ok){ try{localStorage.removeItem('lawyerSurveyDraft');}catch(e){} tip.className='ok';tip.textContent='提交成功，非常感谢您的填写！'; currentNum=999;render();window.scrollTo(0,0); }
+      else { throw new Error('status '+res.status); }
+    })
+    .catch(function(){
+      try{localStorage.setItem('lawyerSurveyDraft', json);}catch(e){}
+      tip.className='fail';tip.textContent='提交未成功（网络异常）。您填写的内容已暂存在本机，可稍后重新打开本页自动补交，或联系问卷发布者。';
+    });
 }
 function finish(msg){
   document.getElementById('pages').style.display='none';
@@ -258,7 +272,18 @@ function setupOtherInputs(){
   });
 }
 function syncAllOther(){document.querySelectorAll('.opt').forEach(function(lb){var inp=lb.querySelector('input');var ti=lb.querySelector('.other-text');if(inp&&ti){var on=inp.checked;ti.style.display=on?'inline-block':'none';ti.disabled=!on;}});}
-window.addEventListener('load',function(){setupOtherInputs();refresh();render();});
+window.addEventListener('load',function(){
+  setupOtherInputs();refresh();render();
+  try{
+    var ua=navigator.userAgent||'';
+    if(/MicroMessenger/i.test(ua)){ var w=document.getElementById('wxTip'); if(w)w.style.display='block'; }
+    var draft=localStorage.getItem('lawyerSurveyDraft');
+    if(draft){
+      fetch('https://kesongxiaofang.pythonanywhere.com/api/lawyer-survey',{method:'POST',headers:{'Content-Type':'application/json'},body:draft})
+        .then(function(res){ if(res.ok){localStorage.removeItem('lawyerSurveyDraft');} });
+    }
+  }catch(e){}
+});
 </script>
 </body>
 </html>
